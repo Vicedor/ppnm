@@ -1,0 +1,15 @@
+This is the v vector: 1 2 3
+This is the u vector: 2 4 6
+This is v + u: 3 6 9
+This is v - u: -1 -2 -3
+This is -v: -1 -2 -3
+This is 2.5*v: 2.5 5 7.5
+This is v*2.5: 2.5 5 7.5
+
+These next writes to Console uses the vec ToString method:
+v dot u: 28
+v dot u using static function: 28
+v cross u: (x, y, z) = (0, 0, 0)
+v cross u using static function: (x, y, z) = (0, 0, 0)
+norm of v: 3.74165738677394
+norm of v using static function:3.74165738677394
