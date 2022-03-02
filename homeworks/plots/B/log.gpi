@@ -1,0 +1,9 @@
+	set terminal png 
+	set output 'lngam.pyxplot.png' 
+	set xlabel '$ x$' 
+	set ylabel '$ y$' 
+	set title 'log gamma function' 
+	set key left top 
+	plot [0:5][] 'gam.data.txt' index 1 using 1:2 with lines title 'lngamma function',\ 
+	'lngam.tab.txt' using 1:2 with points pointtype 3 title 'tab' 
+	

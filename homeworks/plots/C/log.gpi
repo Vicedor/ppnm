@@ -1,0 +1,11 @@
+\
+	set terminal png ;\
+	set output "imgam.pyxplot.png" ;\
+	set xlabel "Re($z$)" ;\
+	set ylabel "Im($z$)" ;\
+	set title "Gamma function complex" ;\
+	set key below ;\
+	set grid ;\
+	set size 7 square ;\
+	plot 3d [][][0:25] "imgam.data.txt" index 0 using 2:1:3 with surface col black fillcol green title "$\Gamma$($z$)" ;\
+	
