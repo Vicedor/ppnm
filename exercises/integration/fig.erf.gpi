@@ -1,0 +1,7 @@
+set term png
+set out "fig.erf.png"
+set tics out
+set xlabel "$x$"
+set ylabel "erf($x$)"
+set title "error function, integral representation"
+plot "erf.data.txt" with lines title "$\mathrm{erf}(x)$"
