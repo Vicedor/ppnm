@@ -1,0 +1,10 @@
+set terminal pdf
+set output "exp_pyx.pdf"
+set size 6
+set key bottom right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$" 
+plot [][]\
+ "out.txt" with lines title "$\mathrm{exp}(x)$"\
+,"tab.txt" with points title "Tab data"
