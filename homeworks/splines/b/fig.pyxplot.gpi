@@ -6,7 +6,7 @@ set tics out
 set xlabel "$x$"
 set ylabel "$y$"
 plot [][] \
- "out.txt" using 1:2 with lines title "$\mathrm{sin}(x)$"\
- ,"out.txt" using 1:3 with lines title "Derivative of $\mathrm{sin}(x)$"\
- ,"out.txt" using 1:4 with lines title "Integral of $\mathrm{sin}(x)$"\
+ "out.txt" using 1:2 with lines title "$x^2$"\
+ ,"out.txt" using 1:3 with lines title "Derivative of $x^2$"\
+ ,"out.txt" using 1:4 with lines title "Integral of $x^2$"\
  ,"input.txt" with points title "Tab data"

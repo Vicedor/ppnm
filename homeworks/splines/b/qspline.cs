@@ -24,8 +24,8 @@ public class Qspline {
 			double dbi = b[i + 1] - b[i];
 			double dxi = x[i + 1] - x[i];
 			double dxi1 = x[i + 2] - x[i + 1];
-			c1[i + 1] = (c[i]*dxi - dbi)/dxi1;
-			c2[n - 1 - i] = (dbi - c[i + 1]*dxi1)/dxi;
+			c1[i + 1] = - (c1[i]*dxi - dbi)/dxi1;
+			c2[n - 1 - i] = (dbi - c2[i + 1]*dxi1)/dxi;
 		}
 		for (int i=0; i < n; i++) {
 			c[i] = (c1[i] + c2[i])/2;
