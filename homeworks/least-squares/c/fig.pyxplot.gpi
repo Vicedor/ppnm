@@ -1,0 +1,12 @@
+set terminal png
+set output "least_squares_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$"
+plot [][] \
+ "tab.txt" using 1:2:3 with yerrorbars title "data points"\
+ ,"tab.txt" using 1:4 with lines title "Best fit"\
+ ,"tab.txt" using 1:5 with lines title "Best fit + dc"\
+ ,"tab.txt" using 1:6 with lines title "Best fit - dc"

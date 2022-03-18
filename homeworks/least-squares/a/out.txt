@@ -1,0 +1,5 @@
+Coefficients for exponential fit is f(t) = 141.333899083703*exp(-0.172070796448845 * t)
+This gives a half-life of 4.02826740426002 days
+Compare this to the current estimate of the half-life of Ra-224:
+3.632 days (according to Wolfram Alpha)
+So it's of the same order of magnitude, but still a little off. Not bad for a first experiment though

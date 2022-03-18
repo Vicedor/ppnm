@@ -1,0 +1,6 @@
+Coefficients for exponential fit is f(t) = 141.333899083703*exp(-0.172070796448845 * t)
+The uncertainties are da = 1.03223389525789 and dlambda = 0.004029186777016
+This gives a half-life of 4.02826740426002 pm 0.0965870405028024 days
+Compare this to the current estimate of the half-life of Ra-224:
+3.632 days (according to Wolfram Alpha)
+So within the error, the experiment does not agree with the modern value.
