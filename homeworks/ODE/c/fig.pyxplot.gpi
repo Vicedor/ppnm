@@ -1,0 +1,11 @@
+set terminal png
+set output "ode45_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$"
+plot [][] \
+ "out.txt" using 2:3 with lines title "planet 1",\
+ "out.txt" using 6:7 with lines title "planet 2",\
+ "out.txt" using 10:11 with lines title "planet 3"
