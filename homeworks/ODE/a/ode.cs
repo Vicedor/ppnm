@@ -1,4 +1,5 @@
 using System;
+using static System.Console;
 using static System.Math;
 
 public class ode{
@@ -79,6 +80,11 @@ public class ode{
 			if (err <= tol) {
 				x += h;
 				y = yh;
+				Error.Write($"{x}");
+				for (int j=0; j<y.size; j++) {
+					Error.Write($" {y[j]}");
+				}
+				Error.Write("\n");
 			}
 			h *= Min(Pow(tol/err, power)*safety, 2);
 			if (i == max_iter -1) {

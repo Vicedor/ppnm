@@ -1,10 +1,10 @@
 set terminal png
-set output "least_squares_pyx.png"
+set output "ode45_pyx.png"
 set size 6
 set key top right
 set tics out
 set xlabel "$x$"
 set ylabel "$y$"
 plot [][] \
- "tab.txt" using 1:2:3 with yerrorbars title "data points"\
- ,"tab.txt" using 1:4 with lines title "Best fit"
+ "plot.txt" using 1:2 with lines title "$\theta(t)$",\
+ "plot.txt" using 1:3 with lines title "$\omega(t)$"
