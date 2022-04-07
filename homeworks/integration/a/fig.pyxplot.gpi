@@ -1,0 +1,10 @@
+set terminal png
+set output "erf_pyx.png"
+set size 6
+set key bottom right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$"
+plot [][] \
+ "plot.txt" using 1:2 with lines title "erf$(x)$"\
+ ,"tab.txt" using 1:2 with points title "tab values"

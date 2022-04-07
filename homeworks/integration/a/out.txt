@@ -1,0 +1,4 @@
+int_0^1 dx sqrt(x) = 0.666953909054655 should be 2/3
+int_0^1 dx 1/sqrt(x) = 1.99996150007805 should be 2
+int_0^1 dx 4sqrt(1 - x^2) = 3.14168489828595 should be pi
+int_0^1 dx ln(x)/sqrt(x) = -3.9999521745773 should be -4

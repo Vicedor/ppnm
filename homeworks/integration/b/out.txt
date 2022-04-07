@@ -1,0 +1,9 @@
+Using normal quadrature function:
+int_0^1 dx 1/sqrt(x) = 1.99996150007805 should be 2. Number of calls to f: 8576
+int_0^1 dx ln(x)/sqrt(x) = -3.9999521745773 should be -4. Number of calls to f: 8660
+Using Clenshaw-Curtis variable transformation:
+int_0^1 dx 1/sqrt(x) = 1.99999730808565 should be 2. Number of calls to f: 24
+int_0^1 dx ln(x)/sqrt(x) = -3.9999234350396 should be -4. Number of calls to f: 108
+Using python and scipy's quad function:
+int_0^1 dx 1/sqrt(x) = 1.9999999999999984 with 231 calls to the function.
+int_0^1 dx ln(x)/sqrt(x) = -4.000000000000085 with 315 calls to the function
