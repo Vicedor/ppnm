@@ -2,7 +2,6 @@
 
 from scipy import integrate
 import numpy as np
-import math
 
 i = 0
 j = 0
@@ -12,7 +11,7 @@ k = 0
 def gauss(x):
     global i
     i += 1
-    return math.exp(-x**2) 
+    return np.exp(-x**2) 
 
 
 def xinv(x):
