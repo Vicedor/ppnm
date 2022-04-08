@@ -5,11 +5,6 @@ using static System.Math;
 public static class Integrate {
 	public static (double, double) integrate(Func<double, double> f, double a, double b,
 		       	double acc=0.001, double eps=0.001, double f2=NaN, double f3=NaN) {
-		double h = b-a;
-		if (IsNaN(f2)) {
-			f2 = f(a + 2*h/6);
-			f3 = f(a + 4*h/6);
-		}
 		if (IsNegativeInfinity(a)) {
 			if (IsInfinity(b)) {
 				f = infinf(f);
@@ -28,6 +23,11 @@ public static class Integrate {
 			        a = 0;
 			        b = 1;
 			}
+		}
+		double h = b-a;
+		if (IsNaN(f2)) {
+			f2 = f(a + 2*h/6);
+			f3 = f(a + 4*h/6);
 		}
 		double f1 = f(a + h/6);
 		double f4 = f(a + 5*h/6);

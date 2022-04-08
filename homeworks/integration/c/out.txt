@@ -1,6 +1,6 @@
-int_-inf^inf e^(-x^2) dx = 1.77268516356473, should be 1.77245385090552. Error: 0.000354290919482376. Number of function calls: 84.
-int_1^inf tan(x)/x dx = 0.999979654947917, should be 1. Error: 1.01725260416667E-05. Number of function calls 60.
-int_-inf^0 1/(1+x^2) dx = 1.57087236410369, should be 1.5707963267949. Error: 0.000513057313063721. Number of function calls 28.
+int_-inf^inf e^(-x^2) dx = 1.77268516356473, should be 1.77245385090552. Error: 0.000354290919482376. Number of function calls: 80.
+int_1^inf tan(x)/x dx = 1, should be 1. Error: 1.11022302462516E-16. Number of function calls 4.
+int_-inf^0 1/(1+x^2) dx = 1.57087236410369, should be 1.5707963267949. Error: 0.000513057313063752. Number of function calls 24.
 Using python and scipy's quad function:
 int_-inf^inf e^(-x^2) dx = 1.7724538509067376 with error 4.316364671314715e-06 and 150 calls to the function.
 int_1^inf 1/x^2 dx = 1.0 with error 1.1102230246251565e-14 and 15 calls to the function
