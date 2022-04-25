@@ -1,0 +1,10 @@
+set terminal png
+set output "wavefunction_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$r$"
+set ylabel "$f$"
+plot [][] \
+ "wavefunction.txt" using 1:2 with lines title "ode solution"\
+,"wavefunction.txt" using 1:3 with dots pointsize 5 title "analytical solution"
