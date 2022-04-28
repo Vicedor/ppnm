@@ -1,0 +1,14 @@
+set terminal png
+set output "eigenvalues_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$r$"
+set ylabel "$f$"
+plot [][] \
+ "out.txt" index 0 using 1:2 with lines title "numerical E0",\
+ "out.txt" index 0 using 1:3 with lines title "numerical E1",\
+ "out.txt" index 0 using 1:4 with lines title "numerical E2",\
+ "out.txt" index 1 using 1:2 with lines linetype 2 title "analytical E0",\
+ "out.txt" index 1 using 1:3 with lines linetype 2 title "analytical E1",\
+ "out.txt" index 1 using 1:4 with lines linetype 2 title "analytical E2"
