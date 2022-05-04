@@ -1,0 +1,10 @@
+set terminal png
+set output "higgs.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$E$"
+set ylabel "$\sigma$"
+plot [][] \
+ "tab.txt" using 1:2:3 with errorbars title "data points"\
+,"plot.txt" using 1:2 with lines title "best fit"

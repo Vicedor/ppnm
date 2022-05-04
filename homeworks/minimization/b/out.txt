@@ -1,0 +1,1 @@
+Minimum found at m=125.972188031522, Gamma=2.08633959321525, A=9.87625741299741 with 29 iterations
