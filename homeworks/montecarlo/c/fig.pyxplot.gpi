@@ -1,0 +1,9 @@
+set terminal png
+set output "strat_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$x$"
+set ylabel "$y$"
+plot [][0:1] \
+ "plot.txt" using 1:2 with points title "Sampled points"

@@ -1,0 +1,4 @@
+Using plain monte carlo:
+int_0^pi dx/pi int_0^pi dy/pi int_0^pi dz/pi [1 - cos(x)cos(y)cos(z)]^-1 = 1.39818162406852, should be 1.393203929... with error 0.00925786760208235
+Using quasi-random monte carlo:
+int_0^pi dx/pi int_0^pi dy/pi int_0^pi dz/pi [1 - cos(x)cos(y)cos(z)]^-1 = 1.41090140132188, should be 1.393203929... with error 6.01393891365243E-07

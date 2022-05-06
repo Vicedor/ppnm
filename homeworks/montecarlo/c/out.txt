@@ -1,0 +1,1 @@
+int_0^1 dx int_0^1 dy 1 if x^2 + y^2 < 0.8^2 else 0 = 0.493, should be 0.5026548... with error 0.0158098387088547

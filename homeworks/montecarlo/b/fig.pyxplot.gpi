@@ -1,0 +1,12 @@
+set terminal png
+set output "mc_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$N$"
+set ylabel "err"
+plot [][0:1] \
+ "plot.txt" using 1:3 with lines title "error plain",\
+ "plot.txt" using 1:5 with lines title "error quasi",\
+ "tab.txt" using 1:2 with points title "$\frac{1}{\sqrt{x}}$",\
+ "tab.txt" using 1:3 with points title "$\frac{1}{x}$"

@@ -1,0 +1,1 @@
+int_0^pi dx/pi int_0^pi dy/pi int_0^pi dz/pi [1 - cos(x)cos(y)cos(z)]^-1 = 1.38653815738585, should be 1.393203929... with error 0.0064589135556117
