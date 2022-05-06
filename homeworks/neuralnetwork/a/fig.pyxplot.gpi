@@ -1,0 +1,10 @@
+set terminal png
+set output "ann.png"
+set size 6
+set key top left
+set tics out
+set xlabel "$x$"
+set ylabel "$y$"
+plot [][] \
+ "out.txt" index 0 using 1:2 with points title "$g(x)=\cos(5x-1)e^{-x^2}$"\
+,"out.txt" index 1 using 1:2 with lines title "ANN fit"
