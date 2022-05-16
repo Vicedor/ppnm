@@ -36,7 +36,7 @@ public static class main{
 
 		double dz = 1.0/64;
 		for (double z=0; z <= 5; z+=dz) {
-			WriteLine($"{z} {cspline.eval(z)} {cspline.deriv(z)} {cspline.integ(z)}");
+			WriteLine($"{z} {cspline.Eval(z)} {cspline.Derivative(z)} {cspline.Integrate(z)}");
 		}
 		return 0;
 	}

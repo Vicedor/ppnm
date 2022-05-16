@@ -39,9 +39,8 @@ public class Qspline {
 
 	public double Derivative(double z) {
 		int i = Binsearch(0, x.Length - 1, z);
-		double a1 = b[i] - c[i]*(x[i] + x[i + 1]);
-		double a2 = c[i];
-		return a1 + 2*a2*z;
+		double dx = z - x[i];
+		return b[i] + 2*dx*c[i];
 	}
 
 	public double Integral(double z, double k) {
