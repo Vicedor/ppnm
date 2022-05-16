@@ -27,6 +27,16 @@ static class main{
 
 		// Exercise C:
 		WriteLine("\n These next lines are a test of the approx methods:");
-
+		vec a = new vec(1, 1, 1);
+		vec b = new vec(1, 1, 1);
+		vec d = new vec(1+1e-10, 1+1e-10, 1+1e-10);
+		vec e = new vec(1+1e-8, 1+1e-8, 1+1e-8);
+		vec f = new vec(1-1e-10, 1-1e-10, 1-1e-10);
+		vec g = new vec(1-1e-8, 1-1e-8, 1-1e-8);
+		WriteLine($"{a.ToString()} = {b.ToString()}: {a.approx(b)}");
+		WriteLine($"{a.ToString()} = {d.ToString()}: {a.approx(d)}");
+		WriteLine($"{a.ToString()} = {e.ToString()}: {a.approx(e)}");
+		WriteLine($"{a.ToString()} = {f.ToString()}: {vec.approx(a,f)}");
+		WriteLine($"{a.ToString()} = {g.ToString()}: {vec.approx(a,g)}");
 	}
 }
