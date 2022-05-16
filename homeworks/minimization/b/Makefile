@@ -14,4 +14,4 @@ main.exe: main.cs matlib.dll
 	mcs -target:exe -out:$@ -reference:matlib.dll $<
 
 clean:
-	rm -r main.exe matlib.dll out.txt
+	rm -r main.exe matlib.dll out.txt higgs.png
