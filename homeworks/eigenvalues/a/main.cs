@@ -63,16 +63,15 @@ public static class main{
 	}
 
 	private static void jacobi_diag(matrix A, matrix V) {
-		bool changed = true;
-		int max_iter = 1000;
-		int i = 0;
+		bool changed;
 		int n = A.size1;
-		while (changed && i < max_iter) {
-			i++;
+		V.set_unity();
+		do {
+			changed = false;
 			for (int p=0; p<n-1; p++) {
-				double app = A[p, p];
 				for (int q=p+1; q<n; q++) {
 					double apq = A[p, q];
+					double app = A[p, p];
 					double aqq = A[q, q];
 					double theta = 0.5 * Atan2(2*apq, aqq-app);
 					double c = Cos(theta);
@@ -80,15 +79,13 @@ public static class main{
 					double new_app = c*c*app - 2*s*c*apq + s*s*aqq;
 					double new_aqq = s*s*app + 2*s*c*apq + c*c*aqq;
 					if (new_app != app || new_aqq != aqq) {
+						changed = true;
 						Jacobi.timesJ(A, p, q, theta);
 						Jacobi.Jtimes(A, p, q, -theta);
 						Jacobi.timesJ(V, p, q, theta);
 					}
-					else {
-						changed = false;
-					}
 				}
 			}
-		}
+		} while(changed);
 	}
 }
