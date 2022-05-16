@@ -1,1 +1,1 @@
-Found epslion = -0.499991463995163 compared with correct epsilon = -0.5.
+Found epsilon = -0.499991463995163 compared with correct epsilon = -0.5.

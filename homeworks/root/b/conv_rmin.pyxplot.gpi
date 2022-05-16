@@ -1,0 +1,10 @@
+set terminal png
+set output "convergence_rmin_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$r_{min}$"
+set ylabel "$E$"
+plot [][] \
+ "convergence.txt" index 1 using 1:2 with lines title "rmin convergence"\
+,"convergence.txt" index 1 using 1:3 with dots pointsize 5 title "analytical solution"
