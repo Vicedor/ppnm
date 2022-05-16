@@ -1,34 +1,20 @@
 using System;
 using static System.Console;
-using System.IO;
+using static System.Random;
 
 public static class main{
 	public static int Main(String[] args) {
-		string matrixfile = null;
-		string vectorfile = null;
-		if (args.Length == 0) {
-			Error.Write("There was no input argument! \n");
-			return 1;
-		}
-		else {
-			foreach(string arg in args) {
-				string[] words = arg.Split(':');
-				if (words[0] == "-inputmatrix") {
-					matrixfile = words[1];
-				}
-				if (words[0] == "-inputvector") {
-					vectorfile = words[1];
-				}
+		int n = 6;
+		Random random = new Random();
+		matrix A = new matrix(n, n);
+		
+		for (int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				A[i,j] = random.Next(1,10);
 			}
 		}
-		StreamReader matrixstream = new StreamReader(matrixfile);
-		String m = matrixstream.ReadToEnd();
-		StreamReader vectorstream = new StreamReader(vectorfile);
-		String v = vectorstream.ReadToEnd();
 
 
-		matrix A = new matrix(m);
-		vector b = new vector(v);
 		QRGS qrgs = new QRGS(A);
 		WriteLine("Matrix A:");
 		PrintMatrix(A);

@@ -1,34 +1,21 @@
 using System;
 using static System.Console;
-using System.IO;
+using static System.Random;
 
 public static class main{
 	public static int Main(String[] args) {
-		string matrixfile = null;
-		string vectorfile = null;
-		if (args.Length == 0) {
-			Error.Write("There was no input argument! \n");
-			return 1;
-		}
-		else {
-			foreach(string arg in args) {
-				string[] words = arg.Split(':');
-				if (words[0] == "-inputmatrix") {
-					matrixfile = words[1];
-				}
-				if (words[0] == "-inputvector") {
-					vectorfile = words[1];
-				}
+		Random random = new Random();
+		int n = 8;
+		int m = 6;
+
+		matrix A = new matrix(n, m);
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				A[i,j] = random.Next(1, 10);
 			}
 		}
-		StreamReader matrixstream = new StreamReader(matrixfile);
-		String m = matrixstream.ReadToEnd();
-		StreamReader vectorstream = new StreamReader(vectorfile);
-		String v = vectorstream.ReadToEnd();
 
-
-		matrix A = new matrix(m);
-		vector b = new vector(v);
 		QRGS qrgs = new QRGS(A);
 		WriteLine("Matrix A:");
 		PrintMatrix(A);
@@ -40,13 +27,31 @@ public static class main{
 		PrintMatrix(qrgs.Q.T * qrgs.Q);
 		WriteLine("\n Matrix Q*R:");
 		PrintMatrix(qrgs.Q * qrgs.R);
+
+
+		WriteLine($"Checking the linear equation solver works:");
+		int n2 = 5;
+		matrix B = new matrix(n2, n2);
+		vector b = new vector(n2);
+		
+		for (int i=0; i<n2; i++) {
+			for (int j=0; j<n2; j++) {
+				B[i,j] = random.Next(1, 10);
+			}
+			b[i] = random.Next(1, 10);
+		}
+		
+		QRGS qrgs2 = new QRGS(B);
+
+		WriteLine("\n Matrix A is:");
+		PrintMatrix(B);
 		WriteLine("\n Vector b is:");
 		b.print();
 		WriteLine("\n Solution to Ax=b is x:");
-		vector x = qrgs.solve(b);
+		vector x = qrgs2.solve(b);
 		x.print();
 		WriteLine("\n Check that A*x = b:");
-		vector c = A*x;
+		vector c = B*x;
 		c.print();
 		return 0;
 	}

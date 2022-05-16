@@ -1,5 +1,8 @@
-out.txt: main.exe matrixinput.txt vectorinput.txt
-	mono $< > $@ -inputmatrix:matrixinput.txt -inputvector:vectorinput.txt
+all: out.txt
+	cat $<
+
+out.txt: main.exe
+	mono $< > $@
 
 matlib.dll: vector.cs matrix.cs qrgs.cs
 	mcs -target:library -out:$@ $^
