@@ -17,7 +17,7 @@ public static class main{
 		vector y0 = new vector(PI - 0.1, 0.0);
 		genlist<double> xlist = new genlist<double>();
 		genlist<vector> ylist = new genlist<vector>();
-		vector yend = ode.driver(f, begin, y0, end, xlist=xlist, ylist=ylist);
+		vector yend = ode.driver(f, begin, y0, end, xlist:xlist, ylist:ylist);
 		for (int i=0; i<xlist.size; i++) {
 			WriteLine($"{xlist.data[i]}, {ylist.data[i][0]}, {ylist.data[i][1]}");
 		}

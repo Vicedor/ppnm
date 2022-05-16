@@ -17,4 +17,4 @@ main.exe: main.cs
 	mcs -target:exe -out:$@ $<
 
 clean:
-	rm -r Out.txt main.exe erf.data.txt erf.pyxplot.png
+	rm -r main.exe erf.data.txt erf.pyxplot.png
