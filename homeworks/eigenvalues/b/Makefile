@@ -9,8 +9,8 @@ conv_rmax_pyx.png: conv_rmax.pyxplot.gpi conv.txt
 eigenvalues_pyx.png: fig.pyxplot.gpi out.txt
 	pyxplot $<
 
-out.txt conv.txt: main.exe input.txt
-	mono $< 1> out.txt 2> conv.txt -input:input.txt
+out.txt conv.txt: main.exe
+	mono $< 1> out.txt 2> conv.txt
 
 matlib.dll: vector.cs matrix.cs jacobi.cs
 	mcs -target:library -out:$@ $^

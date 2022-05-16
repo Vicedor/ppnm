@@ -1,8 +1,8 @@
 all: out.txt
 	cat $<
 
-out.txt: main.exe input.txt
-	mono $< > $@ -input:input.txt
+out.txt: main.exe
+	mono $< > $@
 
 matlib.dll: vector.cs matrix.cs jacobi.cs
 	mcs -target:library -out:$@ $^

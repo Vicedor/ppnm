@@ -1,26 +1,20 @@
 using System;
 using static System.Console;
-using System.IO;
+using static System.Random;
 using static System.Math;
 
 public static class main{
 	public static int Main(String[] args) {
-		string file = null;
-		if (args.Length == 0) {
-			Error.Write("There was no input argument! \n");
-			return 1;
-		}
-		else {
-			foreach(string arg in args) {
-				string[] words = arg.Split(':');
-				if (words[0] == "-input") {
-					file = words[1];
-				}
+		int n=8;
+		Random random = new Random();
+		matrix A = new matrix(n, n);
+		for (int i=0; i<n; i++) {
+			for (int j=i; j<n; j++) {
+				int r = random.Next(1, 10);
+				A[i,j] = r;
+				A[j,i] = r;
 			}
 		}
-		StreamReader stream = new StreamReader(file);
-		String m = stream.ReadToEnd();
-		matrix A = new matrix(m);
 		matrix V = new matrix(A.size1, A.size2);
 		for (int i=0; i<V.size1; i++) {
 			for (int j=0; j<V.size2; j++) {
