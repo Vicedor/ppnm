@@ -1,3 +1,3 @@
-int_0^1 dx int_0^1 dy x^2 + y^2 = 0.666601959829355, should be 2/3, with error 0.000421448149992463
-int_0^1 dx int_0^1 dy Log(x)*y = -0.499303499434042, should be -1/2, with error 0.000644580653780084
-int_0^pi dx/pi int_0^pi dy/pi int_0^pi dz/pi [1 - cos(x)cos(y)cos(z)]^-1 = 1.37793514981487, should be 1.393203929... with error 0.0042959603507649
+int_0^1 dx int_0^1 dy x^2 + y^2 = 0.667464083970621, should be 2/3, with error 0.000422155646567256
+int_0^1 dx int_0^1 dy Log(x)*y = -0.500428680815602, should be -1/2, with error 0.000646455450300011
+int_0^pi dx/pi int_0^pi dy/pi int_0^pi dz/pi [1 - cos(x)cos(y)cos(z)]^-1 = 1.41160082164871, should be 1.393203929... with error 0.0153050904073067
