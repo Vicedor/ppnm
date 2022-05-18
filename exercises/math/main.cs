@@ -9,7 +9,9 @@ static public class math {
 		Write($"sqrt(2) = {sqrt2}\n");
 		Write($"sqrt2*sqrt2 = {sqrt2*sqrt2} (should be equal to 2)\n");
 		Write($"e^pi = {epi}\n");
-		WriteLine($"pi^e = {pie}\n");
+		Write($"ln(e^pi) = {Log(epi)} (should be equal to pi)\n");
+		WriteLine($"pi^e = {pie}");
+		WriteLine($"pi^e * pi^-e = {pie * Pow(PI, -E)} (should be equal to 1)");
 	}
 
 }

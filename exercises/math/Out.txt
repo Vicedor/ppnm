@@ -1,5 +1,6 @@
 sqrt(2) = 1.4142135623731
 sqrt2*sqrt2 = 2 (should be equal to 2)
 e^pi = 23.1406926327793
+ln(e^pi) = 3.14159265358979 (should be equal to pi)
 pi^e = 22.459157718361
-
+pi^e * pi^-e = 1 (should be equal to 1)
