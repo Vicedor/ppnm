@@ -5,9 +5,15 @@ My min int = -2147483648
 int.MinValue = -2147483648
 Exercise 2:
 The machine epsilon for double = 2.22044604925031E-16
+The machine epsilon for double should be 2^(-52) = 2.22044604925031E-16
 The machine epsilon for float = 1.192093E-07
+The machine epsilon for float should be 2^-23 = 1.19209289550781E-07
 Exercise 3:
 sumA-1 = 0.000000e+000 should be 1.110223e-010
 sumB-1 = 1.110223e-010 should be 1.110223e-010
+The difference comes from the fact that c-sharp disregards adding machine epsilon to 1 as negligeble, so in sumA it is disregarded each time, but in sumB when 1 is added in the end it is not disregarded. So only in sumB does the epsilons add up because they are added before 1 is added.
 Exercise 4:
+a = 1, b = 0 and |a-b|>1e-9 should be False and it is False
 a = 2E-09, b = 1.5E-09 and |a-b|<1e-9 should be True and it is True
+a = 1, b = 1 and |a-b|<1e-9 should be True and it is True
+a = 10000000000, b = 9999999999 and |a-b|/|a+b|<1e-9 should be True and it is True
