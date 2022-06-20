@@ -36,24 +36,22 @@ public static class main{
 		Func<complex, complex> f = y => y.pow(-n-1) * exp(x*(y - 1.0/y)/2.0);
 		Func<double, complex> z = t => exp(I*t);
 		Func<double, complex> dzdt = t => I*exp(I*t);
-		
-		//Func<complex, complex> f = t => exp(I*x*sin(t));
-		
 		(complex res, complex err) = ComplexIntegrate.ContourIntegrate(f, z, dzdt, 0.0, 2*PI);
-		
-		//(complex res, complex err) = ComplexIntegrate.ComplexLineIntegrate(f, 0, 2*PI);
 		return (res/(2*PI*I), err);
 		
-		//Func<double, complex> f = t => exp(I*x*sin(t))/(exp((n+1)*I*t))*I*exp(I*t); //exp(I*(n*t - x* Sin(t)));
-		//(complex res, complex err) = ComplexIntegrate.CIntegrate(f, 0, 2*PI);
-		//return (res/(2*PI*I), err);
+		//Func<double, complex> f = t => exp(I*(n*t - x* Sin(t)));
+		//(complex res, complex err) = ComplexIntegrate.VT_Integrate(f, 0, 2*PI);
+		//return (res/(2*PI), err);
+		
+		//complex res = integrator.vt_integrate(f, new complex(0, 0), new complex(2*PI, 0));
+		//return (res/(2*PI*I), new complex());
 	}
 
 	private static void BesselPlot() {
 		for (int n=0; n<=3; n++) {
-			for (double x=0.0; x<20; x+=1/32.0) {
+			for (double x=0.0; x<10; x+=1.0/8) {
 				(complex res, complex err) = J(n, x);
-				Error.WriteLine($"{x} {res.Re} {err.Re}");
+				Error.WriteLine($"{x} {res.Re} {err}");
 			}
 			Error.WriteLine();
 			Error.WriteLine();
