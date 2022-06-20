@@ -1,0 +1,9 @@
+set terminal png
+set output "delta_pyx.png"
+set size 6
+set key top right
+set tics out
+set xlabel "$\Delta$"
+set ylabel "$\int \delta (x) dx$"
+plot [][] \
+ "plt.txt" index 0 using 1:2 with lines title "Approximation of $\delta$-function"

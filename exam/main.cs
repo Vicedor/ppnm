@@ -11,6 +11,8 @@ public static class main{
 		(complex res0, complex err0) = ComplexIntegrate.ComplexLineIntegrate(f0, -1.0, I);
 		WriteLine($"Integral of f(z) = z^2 over straight line from -1 to i = {res0}, should be 2/3 + 2i/3, with err={err0}");
 
+		DeltaFunction();
+
 		Func<complex, complex> f1 = x => x.conj();
 		Func<double, complex> z1 = t => 3*t + I*t*t;
 		Func<double, complex> dzdt1 = t => 3 + 2*I*t;
@@ -30,6 +32,18 @@ public static class main{
 		WriteLine($"Integral of f(z) = z^2 over z(t) = e^(i*t) from pi to pi/2 = {res3}, should be 1 + i, with err={err3}");
 
 		BesselPlot();
+	}
+
+	private static void DeltaFunction() {
+		complex a = new complex(-1, -1);
+		complex b = new complex(1, 1);
+		for (double Delta=5.0; Delta > 0; Delta-=1.0/8) {
+			Func<complex, complex> delta = x => exp(-x*x/(4*I*Delta*Delta)) / sqrt(4*PI*I*Delta*Delta);
+			(complex res, double err) = ComplexIntegrate.ComplexLineIntegrate(delta, a, b, 1e-8, 1e-8);
+			Error.WriteLine($"{Delta} {res.Re} {err}");
+		}
+		Error.WriteLine();
+		Error.WriteLine();
 	}
 
 	private static (complex, complex) J(int n, double x) {
