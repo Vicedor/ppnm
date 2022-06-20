@@ -12,7 +12,7 @@ This was a simple matter of converting the "double" keywords to "complex"-type.
 Furthermore, I added a method to do contour integration along a straight line. I used the parametrization
 z(t) = a + (b - a)*t, where a and b are the complex valued end-points. Using this parametrization, the integral
 becomes
-int_a^b f(z)dz = int_0^1 f(z(t)) z'(t) dt.
+int_a^b f(z)dz = int_0^1 f(z(t))*(b-a) dt.
 
 Finally I added some examples of contour integrals. I made two examples:
 	1) The straight line integral over f(z) = |z|^2 from -1 to i.
@@ -24,10 +24,11 @@ Finally I added some examples of contour integrals. I made two examples:
 
 b)
 For part B, I added the possibility to do any contour integration in the complex plane, over any line segment C.
-This is an extension to only doing straight lines in part a. The parametrization is still the same
+This is an extension to only doing straight lines in part a. The parametrization is the general expression
 int_C f(z)dz = int_t1^t2 f(z(t)) z'(t) dt
-but this time z(t) and z'(t) are parameters to the function. As such it is now possible to do integration along any
-parametrizable line. A circular path can for instance be parametrized by z(t)=exp(it) with t1=0 to t2=2pi.
+so this time z(t) and z'(t) must be parameters to the integration-function. As such it is now possible to do
+integration along any parametrizable line. A circular path can for instance be parametrized by z(t)=exp(it)
+with t1=0 to t2=2pi.
 Furthermore, I added an estimation of the error of the integration to the output.
 I also included the Clenshaw-Curtis variable transformation to the integration rutine, to allow for more complex
 integrals to be evaluated in fewer steps.

@@ -18,4 +18,4 @@ main.exe: main.cs matlib.dll
 	mcs -target:exe -out:$@ -reference:matlib.dll $<
 
 clean:
-	rm -r main.exe matlib.dll out.txt plt.txt bessel_pyx.png
+	rm -r main.exe matlib.dll out.txt plt.txt delta_pyx.png bessel_pyx.png
