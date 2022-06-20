@@ -1,8 +1,0 @@
-Integral of f(z) = z^2 over straight line from -1 to i = 0.667+0.667i, should be 2/3 + 2i/3, with err=0.000627+0.000627i
-Integral of f(z) = conj(z) over z(t) = 3t+it^2 = 195+65i, should be 195+65i, with err=0.0331+0.0133i
-Integral of f(z) = 1/z over z(t) = e^(i*t) = 0+6.28i, should be 2*pi*i, with err=0+0.000588i
-Integral of f(z) = z^2 over z(t) = e^(i*t) from pi to pi/2 = 1+1i, should be 1 + i, with err=0.000492+0.000492i
-Using python and scipy's quad function:
-int_-inf^inf e^(-x^2) dx = 1.7724538509067376 with error 4.316364671314715e-06 and 150 calls to the function.
-int_1^inf 1/x^2 dx = 1.0 with error 1.1102230246251565e-14 and 15 calls to the function
-int_-inf^0 1/(1+x^2) dx = 1.5707963268467782 with error 0.00019585615543584383 and 15 calls to the function
