@@ -8,10 +8,9 @@ I have chosen to convert the Recursive adaptive integrator from "Adaptive Integr
 
 a)
 For part A, I converted the integrator to be able to integrate functions with complex arguments and complex values.
-This was a simple matter of converting the "double" keywords to "complex"-type.
 Furthermore, I added a method to do contour integration along a straight line. I used the parametrization
-z(t) = a + (b - a)*t, where a and b are the complex valued end-points. Using this parametrization, the integral
-becomes
+z(t) = a + (b - a)*t, where a and b are the complex valued end-points. Using this parametrization, where t goes from
+0 to 1, the integral becomes
 int_a^b f(z)dz = int_0^1 f(z(t))*(b-a) dt.
 
 Finally I added some examples of contour integrals. I made two examples:
@@ -44,5 +43,17 @@ Finally I added some examples of contour integrals along non-linear paths. I mad
 	   around the origin. I used this integral representation to find the Bessel function for
 	   n=0, 1, 2 and 3, and plotted them, along with some tabulated values.
 
+c)
+For part C, I added the possibility to have infinite limits (however only real-valued infinities), such that
+the integrator can integrate a complex function from -infinity to infinity.
+This allowed me to implement the Fourier transform of a real-valued function
+F(t) = \int_-inf^inf f(x)*exp(-i*x*t) / Sqrt(2pi) dx.
 
-All in all, I would consider parts a and b complete for a total of 9 points.
+To test this Fourier transform, I made 2 examples
+	1) The Fourier transform of f(x) = exp(-x^2) is shown in fourier_pyx.png. The results should be
+	   F(t) = exp(-t^2/4)/Sqrt(2), which is also what is achieved.
+	2) The Fourier transform of a damped cosine wave is shown in damped_pyx.png. The results has the
+	   expected form, however some numerical errors are present in the Fourier transform, probably due
+	   to numerical instabilities.
+
+All in all, I would consider parts a, b and c complete for a total of 10 points.

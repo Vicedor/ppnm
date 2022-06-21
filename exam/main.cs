@@ -32,6 +32,9 @@ public static class main{
 		WriteLine($"Integral of f(z) = z^2 over z(t) = e^(i*t) from pi to pi/2 = {res3}, should be 1 + i, with err={err3}");
 
 		BesselPlot();
+
+		TestFourierTransform();
+		QuantumFreeParticle();
 	}
 
 	private static void DeltaFunction() {
@@ -70,5 +73,31 @@ public static class main{
 			Error.WriteLine();
 			Error.WriteLine();
 		}
+	}
+
+	private static void TestFourierTransform() {
+		Func<double, double> gauss = x => Exp(-x*x);
+		Func<double, complex> fourier_gauss = FourierTransform(gauss);
+		for (double x = -5; x <= 5; x += 1.0/8) {
+			Error.WriteLine($"{x} {gauss(x)} {fourier_gauss(x).Re}");
+		}
+		Error.WriteLine();
+		Error.WriteLine();
+	}
+
+	private static void QuantumFreeParticle() {
+		double kappa = 0.2;
+		double Omega = 1;
+		Func<double, double> f = t => Exp(-kappa*Abs(t))*Cos(Omega*t);
+		Func<double, complex> ft = FourierTransform(f);
+		for (double x = -15; x <= 15; x += 1.0/16) {
+			Error.WriteLine($"{x} {f(x)} {ft(x).Re}");
+		}
+	}
+
+	private static Func<double, complex> FourierTransform(Func<double, double> f) {
+		Func<double, Func<double,complex>> g = p => x => f(x) * exp(-I*p*x) / Sqrt(2*PI);
+		return z => {(complex res, double err) = ComplexIntegrate.Integrate(g(z), NegativeInfinity, PositiveInfinity);
+			     return res;};
 	}
 }

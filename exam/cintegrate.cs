@@ -50,6 +50,13 @@ public static class ComplexIntegrate {
 	// Alternative integration function for functions with double limits and double input.
 	public static (complex, double) Integrate(Func<double, complex> f, double a, double b,
 						   double acc=0.001, double eps=0.001) {
+		if (IsNegativeInfinity(a)) {
+			if (IsInfinity(b)) {
+				f = infinf(f);
+				a = -1;
+				b = 1;
+			}
+		}
 		Func<complex, complex> ft = z => f(z.Re);
 		return Integrate(ft, new complex(a, 0), new complex(b, 0), acc:acc, eps:eps);
 	}
@@ -82,5 +89,9 @@ public static class ComplexIntegrate {
 		Func<double, complex> dzdt = t => b-a;
 
 		return ContourIntegrate(f, z, dzdt, 0, 1, acc:acc, eps:eps);
+	}
+
+	private static Func<double, complex> infinf(Func<double, complex> f) {
+		return t => f(t/(1-t*t)) * (1 + t*t)/(1 - t*t)/(1 - t*t);
 	}
 }
