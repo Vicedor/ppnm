@@ -34,7 +34,7 @@ public static class main{
 		BesselPlot();
 
 		TestFourierTransform();
-		QuantumFreeParticle();
+		DampedHarmonicOscillator();
 	}
 
 	private static void DeltaFunction() {
@@ -42,7 +42,7 @@ public static class main{
 		complex b = new complex(1, 1);
 		for (double Delta=5.0; Delta > 0; Delta-=1.0/8) {
 			Func<complex, complex> delta = x => exp(-x*x/(4*I*Delta*Delta)) / sqrt(4*PI*I*Delta*Delta);
-			(complex res, double err) = ComplexIntegrate.ComplexLineIntegrate(delta, a, b, 1e-8, 1e-8);
+			(complex res, complex err) = ComplexIntegrate.ComplexLineIntegrate(delta, a, b, 1e-8, 1e-8);
 			Error.WriteLine($"{Delta} {res.Re} {err}");
 		}
 		Error.WriteLine();
@@ -55,13 +55,6 @@ public static class main{
 		Func<double, complex> dzdt = t => I*exp(I*t);
 		(complex res, complex err) = ComplexIntegrate.ContourIntegrate(f, z, dzdt, 0.0, 2*PI);
 		return (res/(2*PI*I), err);
-		
-		//Func<double, complex> f = t => exp(I*(n*t - x* Sin(t)));
-		//(complex res, complex err) = ComplexIntegrate.VT_Integrate(f, 0, 2*PI);
-		//return (res/(2*PI), err);
-		
-		//complex res = integrator.vt_integrate(f, new complex(0, 0), new complex(2*PI, 0));
-		//return (res/(2*PI*I), new complex());
 	}
 
 	private static void BesselPlot() {
@@ -85,7 +78,7 @@ public static class main{
 		Error.WriteLine();
 	}
 
-	private static void QuantumFreeParticle() {
+	private static void DampedHarmonicOscillator() {
 		double kappa = 0.2;
 		double Omega = 1;
 		Func<double, double> f = t => Exp(-kappa*Abs(t))*Cos(Omega*t);
@@ -97,7 +90,7 @@ public static class main{
 
 	private static Func<double, complex> FourierTransform(Func<double, double> f) {
 		Func<double, Func<double,complex>> g = p => x => f(x) * exp(-I*p*x) / Sqrt(2*PI);
-		return z => {(complex res, double err) = ComplexIntegrate.Integrate(g(z), NegativeInfinity, PositiveInfinity);
+		return z => {(complex res, complex err) = ComplexIntegrate.Integrate(g(z), NegativeInfinity, PositiveInfinity);
 			     return res;};
 	}
 }

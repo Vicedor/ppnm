@@ -1,4 +1,4 @@
-Integral of f(z) = z^2 over straight line from -1 to i = 0.667+0.667i, should be 2/3 + 2i/3, with err=0.000658+0i
-Integral of f(z) = conj(z) over z(t) = 3t+it^2 = 195+65i, should be 195+65i, with err=0.0352+0i
-Integral of f(z) = 1/z over z(t) = e^(i*t) = -3.49e-17+6.28i, should be 2*pi*i, with err=0.000588+0i
-Integral of f(z) = z^2 over z(t) = e^(i*t) from pi to pi/2 = 1+1i, should be 1 + i, with err=0.000314+0i
+Integral of f(z) = z^2 over straight line from -1 to i = 0.667+0.667i, should be 2/3 + 2i/3, with err=0.000466+0.000466i
+Integral of f(z) = conj(z) over z(t) = 3t+it^2 = 195+65i, should be 195+65i, with err=0.0329+0.0115i
+Integral of f(z) = 1/z over z(t) = e^(i*t) = -3.49e-17+6.28i, should be 2*pi*i, with err=1.34e-18+0.000588i
+Integral of f(z) = z^2 over z(t) = e^(i*t) from pi to pi/2 = 1+1i, should be 1 + i, with err=0.000161+-0.000161i
