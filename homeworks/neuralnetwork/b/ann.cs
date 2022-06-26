@@ -25,13 +25,13 @@ public class ANN {
 		}
 	}
 	
-	private double Fp(double x, vector q, Func<double, double> func) {
+	private double Fp(double x, vector q, Func<double, double> func, int modify=0) {
 		double sum = 0;
 		for (int i=0; i<n; i++) {
 			double ai = q[i + 0*n];
 			double bi = q[i + 1*n];
 			double wi = q[i + 2*n];
-			sum += func((x - ai)/bi) * wi;
+			sum += func((x - ai)/bi) * wi * Pow(bi, modify);
 		}
 		return sum;
 	}
@@ -41,11 +41,11 @@ public class ANN {
 	}
 
 	public double Response_diff(double x) {
-		return Fp(x, this.p, this.f_diff);
+		return Fp(x, this.p, this.f_diff, modify:-1);
 	}
 
 	public double Response_int(double x) {
-		return Fp(x, this.p, this.f_int);
+		return Fp(x, this.p, this.f_int, modify:1);
 	}
 
 	public void Train(vector x, vector y) {
